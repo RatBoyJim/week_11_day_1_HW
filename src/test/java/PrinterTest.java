@@ -38,4 +38,16 @@ public class PrinterTest {
         printer.printDocument(2, 5);
         assertEquals(90, printer.getTonerVolume());
     }
+
+    @Test
+    public void tonerIsReducedAgain() {
+        printer.printDocument(3, 4);
+        assertEquals(88, printer.getTonerVolume());
+    }
+
+    @Test
+    public void tonerIsNotReduced() {
+        printer.printDocument(10, 10);
+        assertEquals(100, printer.getTonerVolume());
+    }
 }
